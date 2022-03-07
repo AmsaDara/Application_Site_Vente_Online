@@ -1,2 +1,2 @@
 ###
-POST http://localhost:3000/login
+POST http://localhost:3000/article

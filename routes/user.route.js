@@ -4,31 +4,26 @@ var express = require("express"),
   {
     signup,signin
   } = require("../controllers/user.controller.js");
+  const articleServices= require('../controllers/article.controller');
+router.post("/register", signup);
 
-router.post("/register", signup, function (req, res) {
-
-});
-
-router.post("/login", signin, function (req, res) {
-
-});
+router.post("/login", signin);
 
 router.get("/hiddencontent", verifyToken, function (req, res) {
   console.log(req.user);
   if (!req.user) {
-    res.status(403).send({
+    res.status(403).json({
         message: "Invalid JWT token"
       });
   }
   if (req.user) {
+    let articles= articleServices.getAllArticles();
     res.status(200)
-      .send({
-        message: "Congratulations! but there is no hidden content"
-      });
+      .json({articles});
   } else if(req.user.role === "normal") {
     res.status(403)
-      .send({
-        message: "Unauthorised access"
+      .json({
+        message:"authorised access"
       });
   }
 });

@@ -1,2 +1,5 @@
 ###
-POST http://localhost:3000/article
+GET http://localhost:3000/article
+
+###
+POST http://localhost:3000/contact

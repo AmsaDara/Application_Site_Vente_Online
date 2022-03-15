@@ -4,6 +4,7 @@ const express = require("express"),
   mongoose = require("mongoose"),
   userRoutes = require("./routes/user.route");
   articleRoutes = require("./routes/article.route");
+  contactRoutes = require("./routes/contact.route");
 const port = process.env.PORT || 3000;
 const host = process.env.HOST || "http://localhost";
 
@@ -35,6 +36,7 @@ app.use(
 //using user route
 app.use(userRoutes);
 app.use(articleRoutes);
+app.use(contactRoutes);
 
 //setup server to listen on port 3000
 app.get((req, res) => {

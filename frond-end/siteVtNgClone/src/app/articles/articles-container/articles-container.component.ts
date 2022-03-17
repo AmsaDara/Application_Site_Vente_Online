@@ -104,7 +104,7 @@ export const INITIAL_ARTICLES: IArticle[] = [
 })
 export class ArticlesContainerComponent implements OnInit {
   
-  articles: IArticle[] = INITIAL_ARTICLES
+  articles: IArticle[];
   isArticleFormShowed:boolean=false;
   
   constructor() {

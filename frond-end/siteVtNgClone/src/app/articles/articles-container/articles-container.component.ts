@@ -5,7 +5,7 @@ export interface IArticle {
   title: string;
   description: string;
   photo: string;
-  taille: string,
+  taille: string;
   nbreArticle: number;
   prix: number;
 }
@@ -104,15 +104,22 @@ export const INITIAL_ARTICLES: IArticle[] = [
 })
 export class ArticlesContainerComponent implements OnInit {
   
-  articles: IArticle[] = INITIAL_ARTICLES  
+  articles: IArticle[] = INITIAL_ARTICLES
+  isArticleFormShowed:boolean=false;
   
-  constructor() {}
+  constructor() {
+    this.articles=[...INITIAL_ARTICLES]
+  }
 
   ngOnInit(): void {}
   
-  addArticle(article:IArticle){
-    console.log('Add :', article);
+  showArticleForm(){
+   this.isArticleFormShowed = !this.isArticleFormShowed
     
+  }
+  
+  addArticleToTheList(article:IArticle){
+    this.articles.push(article)
   }
   
   removeArticle(article:IArticle){

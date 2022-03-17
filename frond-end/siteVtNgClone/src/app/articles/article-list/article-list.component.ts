@@ -8,13 +8,13 @@ import { IArticle } from '../articles-container/articles-container.component';
   styleUrls: ['./article-list.component.css']
 })
 export class ArticleListComponent implements AfterViewInit {
-  @Input()dataSource: IArticle[]=[];
+  @Input()dataSource: IArticle[];
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['title', 'description', 'photo', 'taille', 'nbreArticle', 'prix', 'actions'];
 
   constructor() {
-    
+    this.dataSource=[]
   }
 
   ngAfterViewInit(): void {

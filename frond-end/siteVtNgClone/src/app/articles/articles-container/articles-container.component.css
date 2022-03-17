@@ -7,12 +7,12 @@
 }
 .left{
     width: 90%;
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
     padding: .5em;
     text-align: center;
 }
 .right{
     width: 50%;
-    background-color: darkcyan;
+    /* background-color: darkcyan; */
     padding: .5em;
 }

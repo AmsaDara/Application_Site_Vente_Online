@@ -5,6 +5,7 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticlesFormComponent } from './articles-form/articles-form.component';
 import { MaterialModule } from '../shared/material/material.module';
 import { ArticleTableComponent } from './article-table/article-table.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,8 @@ import { ArticleTableComponent } from './article-table/article-table.component';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   exports:[
     ArticlesContainerComponent,

@@ -1,12 +1,27 @@
-<marquee behavior="scroll" direction="left" bgColor="darkcyan" width="100%"><h1>Bienvenue à notre Site De Vente en ligne</h1></marquee>
-<div class="right">
-    <app-articles-form></app-articles-form>
-</div>
-<div class="wrapper">
-    <div class="left">
-        <app-article-list [dataSource]="articles"></app-article-list>
-        <!-- <app-article-table></app-article-table> -->
-    </div>
-    
-</div>
+<div class="myBorder">
 
+    <marquee behavior="scroll" direction="left" bgColor="darkcyan" width="100%">
+        <h1>Bienvenue à notre Site De Vente en ligne</h1>
+    </marquee>
+    <div class="right" *ngIf="isArticleFormShowed">
+        <app-articles-form
+        (onArticleSave)="addArticleToTheList($event)"
+        ></app-articles-form>
+    </div>
+    <br>
+    
+    <button mat-stroked-button color="primary" (click)="showArticleForm()">Ajouter un article</button>
+    
+    <div class="wrapper">
+        <div class="left">
+            <app-article-list 
+                [dataSource]="articles"
+            ></app-article-list>
+            <!-- <app-article-table></app-article-table> -->
+        </div>
+    
+    </div>
+
+
+
+</div>

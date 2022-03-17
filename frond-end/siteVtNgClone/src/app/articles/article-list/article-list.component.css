@@ -1,5 +1,6 @@
 .full-width-table {
   width: 100%;
+  background-color: rgb(214, 216, 221);
 }
 
 ng-container{
@@ -8,4 +9,11 @@ ng-container{
 
 img {
   width: 70%;
+}
+.LsButtons{
+  display: flex;
+  justify-content: center;
+}
+.alignBt{
+  margin: 5px;
 }

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { IArticle } from '../articles-container/articles-container.component';
+import { ArticleService } from '../article.service';
 
 
 @Component({
@@ -10,9 +10,9 @@ import { IArticle } from '../articles-container/articles-container.component';
 })
 export class ArticlesFormComponent implements OnInit {
   public articleForm;
-  @Output() onArticleSave:EventEmitter<IArticle>= new EventEmitter<IArticle>()
+  @Output() onArticleSave:EventEmitter<any>= new EventEmitter<any>()
   
-  constructor(private fb:FormBuilder) {
+  constructor(private fb:FormBuilder, private articleService:ArticleService) {
       this.articleForm=fb.group({
         title:[''],
         description:[''],
@@ -34,9 +34,8 @@ export class ArticlesFormComponent implements OnInit {
   // }
   
   saveArticle(){
-    console.log(this.articleForm.value);
-    
-    this.onArticleSave.emit(this.articleForm.value);
+    this.articleService.addArticle(this.articleForm.value)
+    this.onArticleSave.emit('Ok')
     
   }
 

@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './shared/material/material.module';
 import { ArticlesModule } from './articles/articles.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -18,8 +19,9 @@ import { ArticlesModule } from './articles/articles.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
-    ArticlesModule
-  ],
+    ArticlesModule,
+    HttpClientModule
+  ], 
   providers: [],
   bootstrap: [AppComponent]
 })

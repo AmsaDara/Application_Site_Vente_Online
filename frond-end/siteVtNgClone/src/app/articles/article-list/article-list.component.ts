@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
-import { IArticle } from '../articles-container/articles-container.component';
+import { Component, EventEmitter, OnInit, AfterContentInit, Input, Output } from '@angular/core';
+import { ArticleService } from '../article.service';
+import { IArticle } from '../articles-container/articles.model';
 
 
 @Component({
@@ -7,23 +8,26 @@ import { IArticle } from '../articles-container/articles-container.component';
   templateUrl: './article-list.component.html',
   styleUrls: ['./article-list.component.css']
 })
-export class ArticleListComponent implements AfterViewInit {
-  @Input()articles: IArticle[]=[];
-
-  constructor() {
-  }
-
-  ngAfterViewInit(): void {
-   
+export class ArticleListComponent {
+  @Input() articles: IArticle[] = [];
+  @Output() onSuppArticle : EventEmitter<IArticle> = new EventEmitter<IArticle>()
+  
+  constructor(private articleService:ArticleService) {
+    
   }
   
+  
+  // ngOnInit(): void {
+  //   this.articles=this.articleService.getAllArticles()
+  // }
+  
   editArticle(article:IArticle){
-    console.log('Edit Article');
+    this.articleService.updateArticle(article)
     
   }
   
   suppArticle(article:IArticle){
-    console.log('Supp Article');
+    this.onSuppArticle.next(article)
     
   }
   

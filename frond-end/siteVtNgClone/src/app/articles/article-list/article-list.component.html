@@ -1,5 +1,11 @@
-<div class="myBorder">
+<app-articles-form *ngIf="isFormVisible"
+  [article]="articleToUpdate"
+  [context]="context"
+  (onArticleSave)="onSavedArticle()"
+></app-articles-form>
 
+<button mat-raised-button color="primary" (click)="showArticleFormForAdd()">Add Article</button>
+<div class="myBorder">
   <h1>Liste d'article</h1>
   <div class="mat-elevation-z8">
     <table class="full-width-table">
@@ -27,7 +33,7 @@
           <td>
             <button mat-raised-button 
                     color="primary"
-                    (click)="editArticle(article)"
+                    (click)="showArticleFormForUpdate(article)"
             >Edit</button>
             <button mat-raised-button 
                     color="warn"
@@ -38,7 +44,7 @@
         </tr>
       </tbody>
     </table>
-
+    <h1>Article(s) : {{articles?.length}}</h1>
   </div>
 
 </div>

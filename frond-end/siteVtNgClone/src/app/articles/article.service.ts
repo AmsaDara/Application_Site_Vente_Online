@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IArticle } from './articles-container/articles.model';
+import { IArticle } from './article.model';
 
 export const INITIAL_ARTICLES: IArticle[] = [
   
@@ -35,7 +35,7 @@ export class ArticleService {
   }
   
   updateArticle(article:IArticle):Observable<any>{
-    return this.http.put(`http://localhost/articles/${article.id}`,article)
+    return this.http.put(`http://localhost:3000/articles/${article.id}`,article)
     
   }
   

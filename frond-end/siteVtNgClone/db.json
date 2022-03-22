@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Couches Confy",
-      "description": "Premiére description",
+      "description": " Première description",
       "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1JtXyyTquz2Y7zhH1l1M8cnwVbQEwwG3fTQ&usqp=CAU",
       "taille": "Tout les tailles sont disponibles",
       "nbreArticle": 5,
@@ -71,24 +71,6 @@
       "taille": "Tout les tailles sont disponible",
       "nbreArticle": 3,
       "prix": 500
-    },
-    {
-      "title": "sample",
-      "description": "wed, 21 oct 2021 18:27:50 GMT",
-      "photo": "image",
-      "taille": "Taille Z",
-      "nbreArticle": 45,
-      "prix": 2456,
-      "id": 9
-    },
-    {
-      "id": 10,
-      "title": "Couches Confy",
-      "description": "Premiére description",
-      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1JtXyyTquz2Y7zhH1l1M8cnwVbQEwwG3fTQ&usqp=CAU",
-      "taille": "Tout les tailles sont disponible",
-      "nbreArticle": 5,
-      "prix": 1450
     }
   ]
 }

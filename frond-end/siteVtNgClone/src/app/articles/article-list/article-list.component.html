@@ -7,7 +7,7 @@
 <button mat-raised-button color="primary" (click)="showArticleFormForAdd()">Add Article</button>
 <div class="myBorder">
   <h1>Liste d'article</h1>
-  <div class="mat-elevation-z8">
+  <!-- <div class="mat-elevation-z8">
     <table class="full-width-table">
       <thead>
         <tr>
@@ -44,9 +44,21 @@
         </tr>
       </tbody>
     </table>
-    <h1>Article(s) : {{articles?.length}}</h1>
-  </div>
-
+    
+  </div> -->
+  
+  <div  *ngFor="let article of articles" class="card">
+    <img class="card-img-top" [src]="article.photo" >
+    <div class="card-body">
+      <h4 class="card-title">{{ article.title }}</h4>
+      <p class="card-text">{{ article.photo }}</p>
+    </div>
+    <div class="card-footer">
+        <button>Add to Cart</button>
+    </div>
+</div>
+  
+  <h1>Article(s) : {{articles?.length}}</h1>
 </div>
 
 <!-- <pre><code style="color: blue;"> 

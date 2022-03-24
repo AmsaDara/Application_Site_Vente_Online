@@ -24,7 +24,8 @@ const materials = [
   MatSortModule,
   MatFormFieldModule,
   MatSelectModule,
-  MatInputModule
+  MatInputModule,
+  
 ];
 
 @NgModule({

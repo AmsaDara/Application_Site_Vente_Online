@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { map, Observable, shareReplay } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,4 +17,5 @@ export class AppComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
+  
 }

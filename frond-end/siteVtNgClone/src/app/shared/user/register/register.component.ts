@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { UserService } from '../user.service';
+import {MatSnackBar} from '@angular/material/snack-bar'
 
 @Component({
   selector: 'app-register',
@@ -7,20 +9,25 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-
   registerForm = this.fb.group({
     fullusername: [null, Validators.required],
     email: [null, Validators.required],
     password: [null, Validators.required],
     phone: null,
     city: null
-    
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private userService:UserService, private snackBar:MatSnackBar) {}
 
   onSubmit(): void {
-    alert(JSON.stringify(this.registerForm.value,undefined,3));
+    this.userService.registerUser(this.registerForm.value).subscribe({
+      next:(res)=>{
+        this.snackBar.open(res.message,"close")
+      },
+      error:(error)=>{
+        
+      },
+      complete:()=>{}
+    })
   }
-
 }

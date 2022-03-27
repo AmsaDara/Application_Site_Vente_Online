@@ -11,7 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input'
 import { MatRadioModule } from '@angular/material/radio';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -26,7 +26,8 @@ const materials = [
   MatFormFieldModule,
   MatSelectModule,
   MatInputModule,
-  MatRadioModule
+  MatRadioModule,
+  MatSnackBarModule
   
 ];
 

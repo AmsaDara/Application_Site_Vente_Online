@@ -4,6 +4,8 @@ import { AboutPageComponent } from './layouts/about-page/about-page.component';
 import { ArticlesPageComponent } from './layouts/articles-page/articles-page.component';
 import { ContactPageComponent } from './layouts/contact-page/contact-page.component';
 import { HomePageComponent } from './layouts/home-page/home-page.component';
+import { RegisterPageComponent } from './layouts/register-page/register-page.component';
+import { SigninPageComponent } from './layouts/signin-page/signin-page.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,14 @@ const routes: Routes = [
   {
     path:'contact',
     component:ContactPageComponent
+  },
+  {
+    path:'signin',
+    component:SigninPageComponent
+  },
+  {
+    path:'register',
+    component:RegisterPageComponent
   },
   {
     path:'**',

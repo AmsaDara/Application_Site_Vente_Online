@@ -8,4 +8,5 @@ export interface IUser{
     avatar_url? : string
     role? : string
     isGranted : boolean
+    token?: string
 }

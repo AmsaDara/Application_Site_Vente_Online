@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './gards/auth.guard';
 import { AboutPageComponent } from './layouts/about-page/about-page.component';
 import { ArticlesPageComponent } from './layouts/articles-page/articles-page.component';
 import { ContactPageComponent } from './layouts/contact-page/contact-page.component';
@@ -13,7 +14,12 @@ const routes: Routes = [
     component:HomePageComponent
   },
   {
-    path:'articles',
+    path:'allarticles',
+    component:ArticlesPageComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:'unallarticles',
     component:ArticlesPageComponent
   },
   {

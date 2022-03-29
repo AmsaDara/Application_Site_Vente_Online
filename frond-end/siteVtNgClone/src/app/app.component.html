@@ -29,6 +29,8 @@
       <!-- <span class="label">Login</span> -->
     </a>
     
+    <app-user-badge [userInfo]="currentUser"></app-user-badge>
+    
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -83,6 +85,8 @@
                 <!-- <span  class="label">Login</span> -->
                </a>
           </li>
+          
+          <app-user-badge [userInfo]="currentUser"></app-user-badge>
           
         </ul>
      </div>

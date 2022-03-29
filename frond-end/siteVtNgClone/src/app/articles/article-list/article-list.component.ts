@@ -7,6 +7,7 @@ import {
   Output,
   OnChanges,
 } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { IArticle } from '../article.model';
 import { ArticleService } from '../article.service';
@@ -17,17 +18,24 @@ import { ArticleService } from '../article.service';
   styleUrls: ['./article-list.component.css'],
 })
 export class ArticleListComponent implements OnInit {
-  articles?: IArticle[]
+  articles?: any
   isFormVisible = false
   articleToUpdate?:IArticle
   context : 'ADD' |'UPDATE' = 'ADD'
 
-  constructor(private articleService: ArticleService) {
-    
-  }
+  constructor(
+    private articleService: ArticleService, 
+    private snackBar:MatSnackBar) {}
 
   ngOnInit(){
-    this.articleService.getAllArticles().subscribe(data=>this.articles=data)
+    this.articleService.getAllArticles().subscribe(data=>{
+      if(data.status === "error"){
+        this.snackBar.open(data.message,'x');
+        this.articles=[];
+      }else {
+        this.articles=data.payload
+      }
+      })
   }
   
   showArticleFormForAdd(){

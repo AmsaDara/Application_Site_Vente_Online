@@ -18,8 +18,8 @@ export class ArticleService {
     
   }
   
-  getAllArticles ():Observable<IArticle[]>{
-    return this.http.get('http://localhost:3000/articles') as Observable<IArticle[]> 
+  getAllArticles ():Observable<any>{
+    return this.http.get('http://localhost:3000/articles/featured') as Observable<IArticle[]> 
   }
   
   addArticle(article:IArticle):Observable<IArticle>{
